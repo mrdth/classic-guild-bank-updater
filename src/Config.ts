@@ -29,7 +29,6 @@ class Config {
 
   loadFromEnv (filePath: string = '/../.env') {
     const dotenv = require('dotenv').config({ path: path.join(__dirname, filePath) });
-    console.log(dotenv.parsed);
     Object.keys(dotenv.parsed).forEach((key, index) => this.put(camelCase(key), dotenv.parsed[key]));
   }
 }
