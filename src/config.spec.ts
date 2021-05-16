@@ -9,24 +9,24 @@ describe('Config', () => {
 
   it('can store new config items', () => {
     const msg = 'Hello, World!';
-    config.put({ key: 'hello', value: msg });
+    config.put('hello', msg);
 
     expect(config.get('hello')).toEqual('Hello, World!');
   });
 
   it('can delete an item', () => {
     const msg = 'Hello, World!';
-    config.put({ key: 'hello', value: msg });
+    config.put('hello', msg);
     config.delete('hello');
 
     expect(config.get('hello')).toBeNull();
   });
 
   it('can update config items', () => {
-    config.put({ key: 'hello', value: 'Hello, World!' });
+    config.put('hello', 'Hello, World!');
     expect(config.get('hello')).toEqual('Hello, World!');
 
-    config.put({ key: 'hello', value: 'Hello, My Baby. Hello, My Honey. Hello, My Ragtime Gal!' });
+    config.put('hello', 'Hello, My Baby. Hello, My Honey. Hello, My Ragtime Gal!');
 
     expect(config.get('hello')).toEqual('Hello, My Baby. Hello, My Honey. Hello, My Ragtime Gal!');
   });

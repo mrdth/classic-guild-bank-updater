@@ -1,3 +1,7 @@
+import path from 'path';
+const camelCase = require('just-camel-case');
+const dotenv = require('dotenv').config({ path: path.join(__dirname, '/../.env') });
+
 interface ConfigItem {
   key: string,
   value: any
@@ -15,13 +19,17 @@ class Config {
     return item.value ?? null;
   }
 
-  put (item: ConfigItem) {
-    this.delete(item.key);
-    this.store.push(item);
+  put (key: string, value: any) {
+    this.delete(key);
+    this.store.push({ key: key, value: value });
   }
 
   delete (key: string) {
     this.store = this.store.filter((element) => element.key !== key);
+  }
+
+  loadFromEnv () {
+    Object.keys(dotenv.parsed).forEach((key, index) => this.put(camelCase(key), dotenv.parsed[key]));
   }
 }
 
