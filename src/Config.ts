@@ -1,6 +1,5 @@
 import path from 'path';
 const camelCase = require('just-camel-case');
-const dotenv = require('dotenv').config({ path: path.join(__dirname, '/../.env') });
 
 interface ConfigItem {
   key: string,
@@ -28,7 +27,9 @@ class Config {
     this.store = this.store.filter((element) => element.key !== key);
   }
 
-  loadFromEnv () {
+  loadFromEnv (filePath: string = '/../.env') {
+    const dotenv = require('dotenv').config({ path: path.join(__dirname, filePath) });
+    console.log(dotenv.parsed);
     Object.keys(dotenv.parsed).forEach((key, index) => this.put(camelCase(key), dotenv.parsed[key]));
   }
 }

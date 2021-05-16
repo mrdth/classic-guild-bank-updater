@@ -30,4 +30,9 @@ describe('Config', () => {
 
     expect(config.get('hello')).toEqual('Hello, My Baby. Hello, My Honey. Hello, My Ragtime Gal!');
   });
+
+  it('can load config from env file', () => {
+    config.loadFromEnv('/../.env.test');
+    expect(config.get('testValue')).toEqual('this is a test');
+  });
 });
