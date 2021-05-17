@@ -1,5 +1,5 @@
 import path from 'path';
-import FileParser from './FileParser';
+import FileParser from '../FileParser';
 
 describe('File Parser', () => {
   it('can be instantiated with a filename', () => {
@@ -9,7 +9,7 @@ describe('File Parser', () => {
   });
 
   it('extracts export strings from the file', async () => {
-    const testFilePath = path.join(__dirname, '/../testData/example.lua');
+    const testFilePath = path.join(__dirname, '/testData/example.lua');
     const fileParser = new FileParser(testFilePath);
     const strings = await fileParser.parse();
 

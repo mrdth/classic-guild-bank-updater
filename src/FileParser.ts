@@ -10,7 +10,7 @@ class FileParser {
   async parse (): Promise<string[]> {
     const readInterface = readline.createInterface({
       input: fs.createReadStream(this.filePath),
-      output: process.stdout,
+      // output: process.stdout,
       console: false
     });
 

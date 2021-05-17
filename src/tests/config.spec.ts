@@ -1,4 +1,4 @@
-import Config from './Config';
+import Config from '../Config';
 
 describe('Config', () => {
   const config = Config;
