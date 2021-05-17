@@ -1,3 +1,3 @@
 ClassicGuildBankDb = {
-    ["exportString"] = "W0tjdGJhbmssMTQ4OTkzOCxlblVTXTtbLTEsLDAsQmFja3BhY2ssMSxMYXJnZSBHcmVlbiBTYWNrLDIsSm91cm5leW1hbidzIEJhY2twYWNrLDMsSGFuZG1hZGUgTGVhdGhlciBCYWcsNCwsNSxKb3VybmV5bWFuJ3MgQmFja3BhY2ssNixKb3VybmV5bWFuJ3MgQmFja3BhY2ssNywsOCwsOSwsMTAsLDExLCwxMixdO1swLDgsMjU4OSw1XTs=",
+    ["exportString"] = "W0tjdGJhbmssMTQ4OTkzOCxlblVTXTtbLTEsLDAs=",
 }

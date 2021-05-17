@@ -7,7 +7,7 @@ class FileParser {
 
   constructor (filePath: string) { this.filePath = filePath; }
 
-  async parse () {
+  async parse (): Promise<string[]> {
     const readInterface = readline.createInterface({
       input: fs.createReadStream(this.filePath),
       output: process.stdout,
