@@ -13,6 +13,6 @@ describe('File Parser', () => {
     const fileParser = new FileParser(testFilePath);
     const strings = await fileParser.parse();
 
-    expect(strings).toEqual(['W0tjdGJhbmssMTQ4OTkzOCxlblVTXTtbLTEsLDAs=']); ;
+    expect(strings).toEqual(['W0tjdGJhbmssMTQ4OTkzOCxlblVTXTtbLTEsLDAs=']);
   });
 });
