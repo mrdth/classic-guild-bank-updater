@@ -1,5 +1,6 @@
 import { readFile, writeFile } from 'fs/promises';
 import path from 'path';
+import apiClient from './api/ApiClient';
 import config from './Config';
 import FileParser from './FileParser';
 
@@ -18,8 +19,13 @@ const run = async () => {
   const fileParser = new FileParser(config.get('savedVariablesPath'));
   const exportStrings = await fileParser.parse();
   if (await shouldSubmit(exportStrings)) {
-    updateCache(exportStrings);
-    console.log('submitting');
+    exportStrings.forEach(async (importString) => {
+      await apiClient.postImportString(importString)
+        .then(() => updateCache(exportStrings))
+        .catch(error => console.log(error));
+    });
+
+    console.log('submitted update');
   } else {
     console.log('not submitting');
   }
