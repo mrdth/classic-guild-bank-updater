@@ -19,7 +19,7 @@ describe('ApiClient', () => {
     apiClient.postImportString(testString);
 
     expect(mockAxios.post).toHaveBeenCalledWith(
-      `/guild/UploadImportString/${config.get('cgbBankId')}`,
+      '/import',
       { EncodedImportString: testString }
     );
   });

@@ -1,8 +1,6 @@
 import axios, { AxiosInstance } from 'axios';
 
-const baseUrl = 'https://classicguildbank-apim.azure-api.net/api';
-
-export const createHttpClient = (apiToken: string = ''): AxiosInstance => {
+export const createHttpClient = (apiToken: string = '', baseUrl: string = ''): AxiosInstance => {
   let headers = {};
   if (apiToken) {
     console.log(apiToken);

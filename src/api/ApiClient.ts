@@ -9,11 +9,12 @@ class ApiClient {
     constructor () {
       Config.loadFromEnv();
       const token: string = Config.get('cgbApiToken');
-      this.httpClient = createHttpClient(token);
+      const baseUrl: string = Config.get('cgbApiUrl');
+      this.httpClient = createHttpClient(token, baseUrl);
     }
 
     public async postImportString (importString: string): Promise<any> {
-      const result = await this.httpClient.post(`/guild/UploadImportString/${Config.get('cgbBankId')}`, { EncodedImportString: importString });
+      const result = await this.httpClient.post('/import', { EncodedImportString: importString });
       return result;
     }
 
