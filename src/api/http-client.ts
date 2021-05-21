@@ -3,7 +3,6 @@ import axios, { AxiosInstance } from 'axios';
 export const createHttpClient = (apiToken: string = '', baseUrl: string = ''): AxiosInstance => {
   let headers = {};
   if (apiToken) {
-    console.log(apiToken);
     headers = {
       Authorization: `Bearer ${apiToken}`,
       'Content-Type': 'application/json'
