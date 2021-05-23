@@ -25,11 +25,12 @@ const run = async () => {
         .catch(error => console.log(error));
     });
 
-    console.log('submitted update');
+    console.log('submitting update');
   } else {
     console.log('not submitting');
   }
+
+  await apiClient.getAccessLink().then(link => console.log(link.data.url));
 };
 
 run();
-console.log('done');

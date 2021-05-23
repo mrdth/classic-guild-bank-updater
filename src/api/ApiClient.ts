@@ -21,6 +21,11 @@ class ApiClient {
     public async getTestRoute (): Promise<any> {
       return await this.httpClient.get('/test');
     }
+
+    public async getAccessLink (): Promise<any> {
+      const result = await this.httpClient.get('/temp-link');
+      return result;
+    }
 }
 
 export default new ApiClient();
